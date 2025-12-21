@@ -1,0 +1,56 @@
+{
+  "name": "mcp-openapi",
+  "version": "0.1.0",
+  "description": "MCP Server for querying OpenAPI/Swagger documentation",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "mcp-openapi": "./dist/index.js"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "rslib build",
+    "start": "node dist/index.js",
+    "test": "bun test",
+    "test:unit": "jest --testPathIgnorePatterns=integration-tests",
+    "test:integration": "jest --testMatch='**/integration-tests/**/*.test.ts'",
+    "test:jest": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "bun test --coverage",
+    "jest:coverage": "jest --coverage",
+    "clean": "rm -rf build coverage"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "openapi",
+    "swagger",
+    "api",
+    "documentation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^12.1.0",
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "axios": "^1.13.2",
+    "js-yaml": "^4.1.1",
+    "@jest/globals": "^30.2.0",
+    "@modelcontextprotocol/inspector": "^0.18.0",
+    "@rslib/core": "^0.18.5",
+    "@swc/core": "^1.15.7",
+    "@swc/jest": "^0.2.39",
+    "@types/jest": "^30.0.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.0.3",
+    "jest": "^30.2.0",
+    "openapi-typescript": "^7.10.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

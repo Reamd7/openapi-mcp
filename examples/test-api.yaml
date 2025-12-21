@@ -1,0 +1,14 @@
+openapi: 3.0.0
+info:
+  title: Test API YAML
+  version: 1.0.0
+  description: Test API in YAML format
+servers:
+  - url: https://api.example.com
+paths:
+  /test:
+    get:
+      summary: Test endpoint
+      responses:
+        '200':
+          description: Success

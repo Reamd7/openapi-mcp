@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(npm run build:*)",
+      "Bash(node build/test-parser.js:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm view:*)",
+      "Bash(pnpm run jest:coverage)",
+      "mcp__fetch__fetch",
+      "WebFetch(domain:github.com)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm test:jest:*)",
+      "Bash(npx @modelcontextprotocol/inspector:*)",
+      "Bash(grep:*)",
+      "Bash(pnpm test:integration:*)",
+      "Bash(npm view:*)",
+      "WebSearch",
+      "Bash(bun:*)",
+      "Bash(timeout 10 npx @modelcontextprotocol/inspector:*)"
+    ]
+  }
+}
