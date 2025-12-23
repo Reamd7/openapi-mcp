@@ -54,6 +54,63 @@ feat(loader): 添加 HTTP URL 加载支持
 fix(parser): 修复 OpenAPI 3.1 schema 引用解析
 ```
 
+### OpenSpec 文档规范 (双语格式)
+
+项目使用 OpenSpec 进行规范驱动开发，所有 `spec.md` 文件必须采用**双语格式**以通过验证器。
+
+**验证器要求** (OpenSpec 官方规范):
+- 必须使用英文结构标题：`## Purpose`、`## Requirements`、`### Requirement:`、`#### Scenario:`
+- 需求描述必须包含 `SHALL` 或 `MUST` 关键字
+- 每个需求至少需要一个 Scenario 块
+
+**双语格式示例**:
+```markdown
+## Purpose
+
+中文描述功能目的...
+
+## Requirements
+
+### Requirement: 功能名称
+The requirement SHALL describe requirement in English with "SHALL" or "MUST".
+
+中文翻译说明...
+
+#### Scenario: 场景名称
+- **WHEN** 中文场景条件描述
+- **THEN** 中文预期结果描述
+- **AND** 中文附加条件（可选）
+```
+
+**文件格式规范**:
+| 文件 | 格式要求 |
+|------|----------|
+| `spec.md` | 双语格式（英文结构 + 中文内容），通过 `openspec validate` 验证 |
+| `design.md` | 可完全使用中文（无验证要求） |
+| `proposal.md` | 建议使用中文（无验证要求） |
+| `tasks.md` | 可使用中文 |
+
+**Delta 格式** (用于 `changes/*/specs/*/spec.md`):
+```markdown
+## ADDED Requirements    # 新增功能
+## MODIFIED Requirements # 修改现有功能（包含完整更新文本）
+## REMOVED Requirements  # 废弃功能
+```
+
+**验证命令**:
+```bash
+# 验证单个变更
+npx openspec validate <change-id> --strict
+
+# 列出所有变更
+npx openspec list
+
+# 查看变更详情
+npx openspec show <change-id>
+```
+
+**参考**: [OpenSpec 官方文档](https://github.com/Fission-AI/OpenSpec)
+
 ## Domain Context
 - **OpenAPI 规范**: 支持 OpenAPI 2.0 (Swagger) 和 3.x
 - **文件格式**: JSON 和 YAML

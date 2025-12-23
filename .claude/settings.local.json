@@ -18,7 +18,16 @@
       "Bash(npm view:*)",
       "WebSearch",
       "Bash(bun:*)",
-      "Bash(timeout 10 npx @modelcontextprotocol/inspector:*)"
+      "Bash(timeout 10 npx @modelcontextprotocol/inspector:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(npx openspec validate migrate-to-openspec --strict)",
+      "Bash(node /Users/gemini/Documents/backup/mcp-openapi/node_modules/.bin/openspec validate:*)",
+      "Bash(npx openspec validate:*)",
+      "Bash(npx openspec list:*)",
+      "Bash(npx openspec --help:*)",
+      "Bash(npx openspec:*)",
+      "Bash(cat:*)"
     ]
   }
 }
